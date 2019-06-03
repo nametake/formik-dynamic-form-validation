@@ -1,7 +1,7 @@
-import * as React from "react";
-import { render } from "react-dom";
+import * as React from 'react';
+import { render } from 'react-dom';
 
-import "./styles.css";
+import './styles.css';
 
 function App() {
   return (
@@ -12,5 +12,5 @@ function App() {
   );
 }
 
-const rootElement = document.getElementById("root");
+const rootElement = document.getElementById('root');
 render(<App />, rootElement);
