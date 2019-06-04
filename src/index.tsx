@@ -5,11 +5,15 @@ import { Formik, Form, Field } from 'formik';
 import './styles.css';
 
 interface FormValues {
-  selected: string;
+  selected: 'text' | 'color';
+  text: string;
+  color: 'red' | 'blue' | 'green';
 }
 
 const initialValues: FormValues = {
-  selected: 'input'
+  selected: 'text',
+  text: '',
+  color: 'red'
 };
 
 function App() {
@@ -24,11 +28,19 @@ function App() {
           return (
             <Form>
               <Field name="selected" component="select">
-                <option value="input">Input Form</option>
-                <option value="radio">Radio Button</option>
+                <option value="text">Input Form</option>
+                <option value="color">Radio Button</option>
               </Field>
-              {(values.selected === 'input' && <div>foo</div>) ||
-                (values.selected === 'radio' && <div>bar</div>)}
+              {(values.selected === 'text' && (
+                <Field name="text" component="input" />
+              )) ||
+                (values.selected === 'color' && (
+                  <Field name="color" component="select">
+                    <option value="red">red</option>
+                    <option value="blue">blue</option>
+                    <option value="green">green</option>
+                  </Field>
+                ))}
               <button type="submit">submit</button>
             </Form>
           );
