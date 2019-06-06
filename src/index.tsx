@@ -55,7 +55,7 @@ function App() {
               <div>
                 <Field name="selected" component="select">
                   <option value="text">Input Form</option>
-                  <option value="color">Radio Button</option>
+                  <option value="color">Select Color</option>
                 </Field>
               </div>
               {(values.selected === 'text' && (
