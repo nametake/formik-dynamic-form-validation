@@ -14,7 +14,7 @@ interface FormValues {
 const initialValues: FormValues = {
   selected: 'text',
   text: '',
-  color: 'red'
+  color: ''
 };
 
 const validationSchema = Yup.lazy<FormValues>(values => {
